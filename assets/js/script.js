@@ -62,7 +62,7 @@ function spreadsheet() {
 spreadsheet();
 
 function colorRows(calendarHour, element) {
-// css styles implemented to show background color depending on time of day.
+// css styles from my own css is implemented to show background color depending on time of day.
     if (currentHour == calendarHour) {
         element.addClass("present");
     } else if (currentHour < calendarHour) {
@@ -72,4 +72,13 @@ function colorRows(calendarHour, element) {
     };
 };
 
+var saveBtnEl = $(".saveBtn");
 
+saveBtnEl.click(function saveInputs(event) {
+// clicking save icon to save corresponding user input
+    var target = event.target.getAttribute("data-saveBtn"); 
+    var x = "userInput" + target;
+    var y = document.getElementById(x).value;
+    
+    localStorage.setItem(x, y); 
+});
