@@ -3,7 +3,7 @@ var currentDayEl = $("#currentDay");
 var tableEl = $("#table");
 var currentHour = moment().format("HH"); 
 
-currentDayEl.text(moment().format("dddd, MMMM Do"));
+currentDayEl.text(moment().format("dddd, MMMM Do, YYYY, H:mm a"));
 // display date
 
 function spreadsheet() {
@@ -28,16 +28,16 @@ function spreadsheet() {
             `
         <div class = "row">
         
-            <div class = "col-1 hour">
+            <div class = "col-1 hour align2Center">
                 ${hour}${amORpm} 
             </div>
             
             <div class = "col-10" data-hours24 = "${hours24}" id = "clock${hours24}">
-                <textarea id = "userInput${hours24}"></textarea>
+                <textarea class = "mockupMatch" id = "userInput${hours24}"></textarea>
             </div>
             
             <div class = "col-1 saveBtn" data-saveBtn = "${hours24}">
-                <i class = "bi-save-fill" data-saveBtn = "${hours24}"></i>
+                <i class = "fas fa-save align2Center" data-saveBtn = "${hours24}"></i>
             </div>
         
         </div>
@@ -55,7 +55,7 @@ function spreadsheet() {
         };
 
         colorRows(hourValue, clockEl);
-        // call colorRows function after "spreadsheet" function is finished
+        // loop the colorRows function
     };
 };
 
@@ -74,7 +74,7 @@ function colorRows(calendarHour, element) {
 
 var saveBtnEl = $(".saveBtn");
 
-saveBtnEl.click(function saveInputs(event) {
+saveBtnEl.click(function saveUserInput(event) {
 // clicking save icon to save corresponding user input
     var target = event.target.getAttribute("data-saveBtn"); 
     var x = "userInput" + target;

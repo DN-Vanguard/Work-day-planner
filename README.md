@@ -1,30 +1,31 @@
 # Work-day-planner
 
 ## Description
-
-
+This planner gives typical 9-5 worker to implement their notes to keep track of what to do for the work hours.
 
 ## What was your motivation?
-- This assignment is a cultivation of everything I learned so far.
-- After learning about js from scratch, it was about time for me to combine my HTML and CSS skills, and create something that combines these 3 languages together.
+- I really wanted to utilize 3rd party API's.
+- After learning about js from scratch, it was surprising to know that their were easier ways to code in js.
 
 ## Why did I build this project?
-- I use google forms frequently, and never really thought about how much work was put into something like that.
-- Although mine is mediocore compared to google, I established a firm foundation on what is needed.
-- Moving forward, I will always be thinking about the back-end side of things when looking at a website.
+- As someone who likes to stay on schedule, I wanted to create an application where I can track my progress of what to do for the day.
+- I built the interface to be as simple as possible and to visually see if the time has passed or not.
 
 ## What problem does it solve?
-- Linking 2 html pages and js files was quite difficult in the beginning.
-- Although I scoured the web, I didnt fully understand what I was seeing or reading. It wasnt until I had a tutoring session where I was able to speak with someone 1-on-1 to fully grasp linking multiple html and js files together.
-- I needed more hands-on practice, and I am glad that I sought help rather than looking at something I did not understand.
+- I ran into using 3 party languages errors.
+    - Because I got confortable with vanilla javascript, learning other formats to code was quite difficult to understand and implement.
 
 ## What did I learn?
-- Javascript is still a hard language to learn. I have only scratched the surface, but I look forward to applying shortcuts such as jQuery. I was not able to use it for this project, but my next project can only get better!
-- Also, pathing is a huge part of making sure the pages load properly on gitHub. Although my original pathing worked locally, pushing to the hub gave it a lot of trouble. "./" and "../" makes a HUGE difference.
+- Overall, building this application was an amazing experience, and continually learning more js is always a good challenge for someone who wants to enter into the tech industry.
     
 
 ## Link to URL
 https://dn-vanguard.github.io/Work-day-planner/
 
 ## Screenshots
-![] ()
+This photo was taken on June 10, at 5:14am
+(A previous photo was taken, but did not show the color scheme of the times, therefore, retook screenshot and uploaded to readme file)
+![planner_Mockup](assets/images/planner.png)
+(**Note: the photo above shows the time at 5AM, and is only intended to show the color scheme of the current time.
+However the code has been updated to view as a 9-5 schedule starting at 9:00AM as shown in the picture below.)
+![work_schedule](assets/images/workSchedule.png)
