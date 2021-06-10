@@ -1,35 +1,52 @@
 // global variables
+var currentDayEl = $("#currentDay");  
+var tableEl = $("#table");
+var currentHour = moment().format("HH"); 
 
-var currentDayEl = $('#currentDay');  
-var tableEL = $('#table');
-var currentHour = moment().format('HH');
-// ^^ display current time
-
-currentDayEl.text(moment().format('dddd, MMMM Do')); 
-// ^^ display current date minus the year
-
+currentDayEl.text(moment().format("dddd, MMMM Do"));
+// display date
 
 function spreadsheet() {
-// creation of the spreadsheet planner in js instead of HTML
+// builds html elements that appear in index.html once launched
     for (var i=0; i<=8; i++) {
-        var clock = i + 9;
-        // ^^ start the spreadsheet at 9:00
+        var hour = i + 9;
         var hours24 = i + 9;
-        //  ^^ placeholder variable to keep the clock moving in an 24hour format
-        var amORpm = 'AM';
+        var amORpm = "AM";
+        // 24 hour format for a basic 9-5 work schedule
         
-            if (clock === 12) {
-                amORpm = 'PM';
-            } else if (clock > 12) {
-                clock -= 12;
-                amORpm = 'PM';
-            };
-            // ^^ This if else statement changes the time to AM or PM respectively
+        if (hour === 12) {
+            amORpm = "PM";
+        } else if (hour > 12) {
+            hour -= 12;
+            amORpm = "PM";
+        }; // switches to am or pm depending on time of day
         
-
+        tableEl.append(
+        // this generates data attribites to pull from based on the hour
+        // pulls the variables above and places them into the spreadsheet in the column that I set it to
+        // save icon is implemented in line 40
+            `
+        <div class = "row">
         
-    }; // end of for loop   
+            <div class = "col-1 hour">
+                ${hour}${amORpm} 
+            </div>
+            
+            <div class = "col-10" data-hours24 = "${hours24}" id = "clock${hours24}">
+                <textarea id = "userInput${hours24}"></textarea>
+            </div>
+            
+            <div class = "col-1 saveBtn" data-saveBtn = "${hours24}">
+                <i class = "bi-save-fill" data-saveBtn = "${hours24}"></i>
+            </div>
+        
+        </div>
+            `
+        );
+    };
 };
 
-spreadsheet(); // any references to HTML elements created by this function must be done after this call
+spreadsheet();
+
+
 
