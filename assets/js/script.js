@@ -9,7 +9,7 @@ currentDayEl.text(moment().format("dddd, MMMM Do"));
 function spreadsheet() {
 // builds html elements that appear in index.html once launched
     for (var i=0; i<=8; i++) {
-        var hour = i + 9;
+        var hour = i + 9; // called on line 32
         var hours24 = i + 9;
         var amORpm = "AM";
         // 24 hour format for a basic 9-5 work schedule
@@ -43,10 +43,33 @@ function spreadsheet() {
         </div>
             `
         );
+        
+        var clockEl = $("#clock" + hours24);
+        var hourValue = clockEl.data("hours24");
+        var userInputEl = document.getElementById("userInput" + hours24);
+        var userInputString = localStorage.getItem("userInput" + hours24);
+        //  These variables are used to store the user inputs
+        
+        if (userInputString !== null) {
+            userInputEl.innerHTML = userInputString; // show saved user input if there is any
+        };
+
+        colorRows(hourValue, clockEl);
+        // call colorRows function after "spreadsheet" function is finished
     };
 };
 
 spreadsheet();
 
+function colorRows(calendarHour, element) {
+// css styles implemented to show background color depending on time of day.
+    if (currentHour == calendarHour) {
+        element.addClass("present");
+    } else if (currentHour < calendarHour) {
+        element.addClass("future");
+    } else {
+        element.addClass("past");
+    };
+};
 
 
